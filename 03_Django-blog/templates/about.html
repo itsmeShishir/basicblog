@@ -1,0 +1,257 @@
+{% extends 'base/base.html' %}
+{% block title %}About Page | MinimalBlog{% endblock title %}
+{% block content %}
+
+    <!-- About Header -->
+    <section class="bg-gradient-to-br from-primary-50 to-white dark:from-gray-800 dark:to-gray-900 py-16 md:py-24">
+      <div class="container-custom max-w-4xl text-center">
+        <h1 class="animate-fade-in">About MinimalBlog</h1>
+        <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto animate-slide-up">
+          Learn more about our story, our mission, and the team behind MinimalBlog.
+        </p>
+      </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="py-16 bg-white dark:bg-gray-900">
+      <div class="container-custom max-w-4xl">
+        <div class="lg:flex items-center gap-12">
+          <div class="lg:w-1/2 mb-8 lg:mb-0">
+            <img 
+              src="https://images.pexels.com/photos/3194519/pexels-photo-3194519.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+              alt="Our team working" 
+              class="rounded-xl shadow-lg w-full h-auto"
+            />
+          </div>
+          <div class="lg:w-1/2">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6">Our Story</h2>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              MinimalBlog was founded in 2023 with a simple mission: to share valuable insights about web development, design, and technology in a clean, accessible format.
+            </p>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              What started as a personal blog quickly grew into a community of like-minded professionals and enthusiasts who are passionate about creating exceptional digital experiences.
+            </p>
+            <p class="text-gray-600 dark:text-gray-300">
+              Today, we're proud to be a trusted resource for thousands of readers around the world who visit our site each month for inspiration, education, and practical advice.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Mission -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-800">
+      <div class="container-custom max-w-4xl text-center">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6">Our Mission</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto">
+          At MinimalBlog, we believe in making technology and design knowledge accessible to everyone. 
+          Our goal is to demystify complex concepts and provide practical, actionable insights 
+          that help our readers grow professionally and create better digital products.
+        </p>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-sm">
+            <div class="w-16 h-16 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-600 dark:text-primary-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Educate</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              We break down complex topics into digestible, easy-to-understand content for readers at all skill levels.
+            </p>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-sm">
+            <div class="w-16 h-16 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-600 dark:text-primary-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Inspire</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              We showcase innovative ideas and approaches to spark creativity and encourage readers to think outside the box.
+            </p>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-sm">
+            <div class="w-16 h-16 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-600 dark:text-primary-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Connect</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              We foster a community where professionals can learn from each other and grow together through shared knowledge.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Meet the Team -->
+    <section class="py-16 bg-white dark:bg-gray-900">
+      <div class="container-custom max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-center mb-12">Meet the Team</h2>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Team Member 1 -->
+          <div class="text-center">
+            <div class="relative mb-4 inline-block">
+              <img 
+                src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                alt="Michael Thompson" 
+                class="w-48 h-48 object-cover rounded-full mx-auto"
+              />
+              <div class="absolute bottom-0 right-0 bg-white dark:bg-gray-800 rounded-full p-2 shadow-md">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+              </div>
+            </div>
+            <h3 class="text-xl font-semibold">Michael Thompson</h3>
+            <p class="text-primary-600 dark:text-primary-400 mb-2">Founder & Editor-in-Chief</p>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">
+              Web developer with 10+ years of experience, focused on creating clean, accessible websites.
+            </p>
+          </div>
+          
+          <!-- Team Member 2 -->
+          <div class="text-center">
+            <div class="relative mb-4 inline-block">
+              <img 
+                src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                alt="Jennifer Lee" 
+                class="w-48 h-48 object-cover rounded-full mx-auto"
+              />
+              <div class="absolute bottom-0 right-0 bg-white dark:bg-gray-800 rounded-full p-2 shadow-md">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              </div>
+            </div>
+            <h3 class="text-xl font-semibold">Jennifer Lee</h3>
+            <p class="text-primary-600 dark:text-primary-400 mb-2">Lead Designer</p>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">
+              UX/UI designer passionate about creating intuitive and beautiful digital experiences.
+            </p>
+          </div>
+          
+          <!-- Team Member 3 -->
+          <div class="text-center">
+            <div class="relative mb-4 inline-block">
+              <img 
+                src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                alt="David Rodriguez" 
+                class="w-48 h-48 object-cover rounded-full mx-auto"
+              />
+              <div class="absolute bottom-0 right-0 bg-white dark:bg-gray-800 rounded-full p-2 shadow-md">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+              </div>
+            </div>
+            <h3 class="text-xl font-semibold">David Rodriguez</h3>
+            <p class="text-primary-600 dark:text-primary-400 mb-2">Senior Developer</p>
+            <p class="text-gray-600 dark:text-gray-300 text-sm">
+              Full-stack developer specializing in JavaScript frameworks and performance optimization.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-800">
+      <div class="container-custom max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-center mb-12">Our Values</h2>
+        
+        <div class="space-y-8">
+          <div class="flex flex-col md:flex-row gap-6 items-start">
+            <div class="md:w-16 w-12 h-12 md:h-16 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 md:h-8 md:w-8 text-primary-600 dark:text-primary-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Quality Over Quantity</h3>
+              <p class="text-gray-600 dark:text-gray-300">
+                We believe in publishing well-researched, thoroughly tested content that provides real value. 
+                Rather than churning out articles, we focus on creating comprehensive resources that stand the test of time.
+              </p>
+            </div>
+          </div>
+          
+          <div class="flex flex-col md:flex-row gap-6 items-start">
+            <div class="md:w-16 w-12 h-12 md:h-16 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 md:h-8 md:w-8 text-primary-600 dark:text-primary-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Inclusivity</h3>
+              <p class="text-gray-600 dark:text-gray-300">
+                Technology should be for everyone. We strive to make our content accessible to people of all backgrounds, 
+                abilities, and experience levels. This means using clear language, providing proper context, and avoiding unnecessary jargon.
+              </p>
+            </div>
+          </div>
+          
+          <div class="flex flex-col md:flex-row gap-6 items-start">
+            <div class="md:w-16 w-12 h-12 md:h-16 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 md:h-8 md:w-8 text-primary-600 dark:text-primary-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Continuous Learning</h3>
+              <p class="text-gray-600 dark:text-gray-300">
+                The tech industry evolves rapidly, and we're committed to growing with it. We continuously 
+                update our knowledge, learn new skills, and revise our content to ensure it remains relevant and accurate.
+              </p>
+            </div>
+          </div>
+          
+          <div class="flex flex-col md:flex-row gap-6 items-start">
+            <div class="md:w-16 w-12 h-12 md:h-16 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 md:h-8 md:w-8 text-primary-600 dark:text-primary-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Transparency</h3>
+              <p class="text-gray-600 dark:text-gray-300">
+                We believe in being honest about what we know and don't know. If we make a mistake, we correct it 
+                openly. Our readers' trust is our most valuable asset, and we're committed to maintaining it.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-white dark:bg-gray-900">
+      <div class="container-custom max-w-4xl text-center">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6">Join Our Community</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+          Be part of our growing community of developers, designers, and tech enthusiasts. 
+          Subscribe to our newsletter to receive the latest articles, tutorials, and updates.
+        </p>
+        <form class="max-w-md mx-auto">
+          <div class="flex flex-col sm:flex-row gap-4">
+            <input 
+              type="email" 
+              placeholder="Enter your email" 
+              class="flex-grow px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500"
+              required
+            />
+            <button type="submit" class="btn-primary whitespace-nowrap">
+              Subscribe
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    {% endblock content %}

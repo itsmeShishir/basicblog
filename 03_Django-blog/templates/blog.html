@@ -1,0 +1,204 @@
+{% extends 'base/base.html' %}
+{% block title %}Blog Page | MinimalBlog{% endblock title %}
+{% block content %}
+
+    <!-- Blog Header -->
+    <section class="bg-white dark:bg-gray-900 py-16">
+      <div class="container-custom text-center">
+        <h1>Blog</h1>
+        <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          Explore our latest articles, tutorials, and insights on design, development, and technology.
+        </p>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="py-8 bg-gray-50 dark:bg-gray-800">
+      <div class="container-custom">
+        <div class="flex flex-wrap justify-center gap-4">
+          <button class="px-4 py-2 rounded-full bg-primary-500 text-white hover:bg-primary-600 transition-colors">All</button>
+          <button class="px-4 py-2 rounded-full bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">Technology</button>
+          <button class="px-4 py-2 rounded-full bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">Design</button>
+          <button class="px-4 py-2 rounded-full bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">Development</button>
+          <button class="px-4 py-2 rounded-full bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">Career</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Search -->
+    <section class="py-8 bg-white dark:bg-gray-900">
+      <div class="container-custom max-w-2xl">
+        <div class="relative">
+          <input 
+            type="text" 
+            placeholder="Search articles..." 
+            class="w-full px-4 py-2 pl-10 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500"
+          />
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-800">
+      <div class="container-custom">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Post 1 -->
+          <article class="card animate-fade-in">
+            <img 
+              src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+              alt="People collaborating" 
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <span class="text-sm font-medium bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200 px-3 py-1 rounded-full">Technology</span>
+                <span class="ml-4 text-sm text-gray-500 dark:text-gray-400">October 15, 2025</span>
+              </div>
+              <h3 class="text-xl mb-3">The Future of Web Development: Trends to Watch in 2025</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">
+                As we move further into 2025, web development continues to evolve at a rapid pace. From AI-powered tools to new approaches in design...
+              </p>
+              <a href="/post.html" class="text-primary-600 dark:text-primary-400 font-medium hover:text-primary-700 dark:hover:text-primary-300">Read More →</a>
+            </div>
+          </article>
+          
+          <!-- Post 2 -->
+          <article class="card animate-fade-in" style="animation-delay: 100ms;">
+            <img 
+              src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+              alt="Laptop with code" 
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <span class="text-sm font-medium bg-accent-100 text-accent-800 dark:bg-accent-900 dark:text-accent-200 px-3 py-1 rounded-full">Development</span>
+                <span class="ml-4 text-sm text-gray-500 dark:text-gray-400">October 10, 2025</span>
+              </div>
+              <h3 class="text-xl mb-3">Getting Started with Tailwind CSS: A Beginner's Guide</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">
+                Learn how to set up Tailwind CSS and leverage its utility-first approach to build modern interfaces quickly.
+              </p>
+              <a href="/post.html" class="text-primary-600 dark:text-primary-400 font-medium hover:text-primary-700 dark:hover:text-primary-300">Read More →</a>
+            </div>
+          </article>
+          
+          <!-- Post 3 -->
+          <article class="card animate-fade-in" style="animation-delay: 200ms;">
+            <img 
+              src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+              alt="Person using laptop" 
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <span class="text-sm font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 px-3 py-1 rounded-full">Design</span>
+                <span class="ml-4 text-sm text-gray-500 dark:text-gray-400">October 5, 2025</span>
+              </div>
+              <h3 class="text-xl mb-3">Designing for Accessibility: Best Practices</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">
+                Explore how to make your websites more accessible to all users, including those with disabilities.
+              </p>
+              <a href="/post.html" class="text-primary-600 dark:text-primary-400 font-medium hover:text-primary-700 dark:hover:text-primary-300">Read More →</a>
+            </div>
+          </article>
+          
+          <!-- Post 4 -->
+          <article class="card animate-fade-in" style="animation-delay: 300ms;">
+            <img 
+              src="https://images.pexels.com/photos/3183165/pexels-photo-3183165.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+              alt="Team meeting" 
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <span class="text-sm font-medium bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200 px-3 py-1 rounded-full">Career</span>
+                <span class="ml-4 text-sm text-gray-500 dark:text-gray-400">September 28, 2025</span>
+              </div>
+              <h3 class="text-xl mb-3">From Junior to Senior: Navigating Your Web Dev Career</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">
+                Advice for developers looking to advance their careers and take on more senior responsibilities.
+              </p>
+              <a href="/post.html" class="text-primary-600 dark:text-primary-400 font-medium hover:text-primary-700 dark:hover:text-primary-300">Read More →</a>
+            </div>
+          </article>
+          
+          <!-- Post 5 -->
+          <article class="card animate-fade-in" style="animation-delay: 400ms;">
+            <img 
+              src="https://images.pexels.com/photos/4050315/pexels-photo-4050315.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+              alt="User experience design" 
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <span class="text-sm font-medium bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-200 px-3 py-1 rounded-full">UX</span>
+                <span class="ml-4 text-sm text-gray-500 dark:text-gray-400">September 22, 2025</span>
+              </div>
+              <h3 class="text-xl mb-3">UX Writing: Creating Clear and Effective Microcopy</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">
+                The art of writing small but mighty text that guides users through your digital products.
+              </p>
+              <a href="/post.html" class="text-primary-600 dark:text-primary-400 font-medium hover:text-primary-700 dark:hover:text-primary-300">Read More →</a>
+            </div>
+          </article>
+          
+          <!-- Post 6 -->
+          <article class="card animate-fade-in" style="animation-delay: 500ms;">
+            <img 
+              src="https://images.pexels.com/photos/2004161/pexels-photo-2004161.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+              alt="Smartphone apps" 
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <span class="text-sm font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 px-3 py-1 rounded-full">Mobile</span>
+                <span class="ml-4 text-sm text-gray-500 dark:text-gray-400">September 15, 2025</span>
+              </div>
+              <h3 class="text-xl mb-3">Progressive Web Apps vs. Native: Which to Choose in 2025?</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">
+                A comparison of PWAs and native apps to help you make the right choice for your next project.
+              </p>
+              <a href="/post.html" class="text-primary-600 dark:text-primary-400 font-medium hover:text-primary-700 dark:hover:text-primary-300">Read More →</a>
+            </div>
+          </article>
+        </div>
+        
+        <!-- Pagination -->
+        <div class="flex justify-center mt-12">
+          <nav class="inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+            <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm font-medium text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700">
+              <span class="sr-only">Previous</span>
+              <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+            </a>
+            <a href="#" aria-current="page" class="relative inline-flex items-center px-4 py-2 border border-primary-500 bg-primary-50 dark:bg-primary-900 text-sm font-medium text-primary-600 dark:text-primary-300">
+              1
+            </a>
+            <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm font-medium text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700">
+              2
+            </a>
+            <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm font-medium text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700">
+              3
+            </a>
+            <span class="relative inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm font-medium text-gray-700 dark:text-gray-400">
+              ...
+            </span>
+            <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm font-medium text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700">
+              8
+            </a>
+            <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm font-medium text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700">
+              <span class="sr-only">Next</span>
+              <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    {% endblock content %}

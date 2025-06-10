@@ -1,0 +1,271 @@
+{% extends 'base/base.html' %}
+{% block title %}Home Page | MinimalBlog{% endblock title %}
+{% block content %}
+    <section class="bg-gradient-to-br from-primary-50 to-white dark:from-gray-800 dark:to-gray-900 py-16">
+      <div class="container-custom">
+        <div class="swiper h-[500px] rounded-xl overflow-hidden">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide relative">
+              <img 
+                src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg" 
+                alt="Technology" 
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent flex items-end">
+                <div class="p-8 text-white">
+                  <span class="bg-primary-500 text-white px-3 py-1 rounded-full text-sm">Technology</span>
+                  <h2 class="text-3xl md:text-4xl mt-4 mb-2">The Future of Web Development</h2>
+                  <p class="text-gray-200 mb-4">Explore the latest trends shaping the future of web development</p>
+                  <a href="/post.html" class="btn-primary">Read More</a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="swiper-slide relative">
+              <img 
+                src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg" 
+                alt="Design" 
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent flex items-end">
+                <div class="p-8 text-white">
+                  <span class="bg-accent-500 text-white px-3 py-1 rounded-full text-sm">Design</span>
+                  <h2 class="text-3xl md:text-4xl mt-4 mb-2">Mastering UI/UX Design</h2>
+                  <p class="text-gray-200 mb-4">Learn the principles of creating engaging user experiences</p>
+                  <a href="/post.html" class="btn-primary">Read More</a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="swiper-slide relative">
+              <img 
+                src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg" 
+                alt="Career" 
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent flex items-end">
+                <div class="p-8 text-white">
+                  <span class="bg-purple-500 text-white px-3 py-1 rounded-full text-sm">Career</span>
+                  <h2 class="text-3xl md:text-4xl mt-4 mb-2">Building Your Tech Career</h2>
+                  <p class="text-gray-200 mb-4">Tips and strategies for advancing in the tech industry</p>
+                  <a href="/post.html" class="btn-primary">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Categories -->
+    <section class="py-16 bg-white dark:bg-gray-900">
+      <div class="container-custom">
+        <h2 class="text-center mb-12">Explore Categories</h2>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Technology Category -->
+          <a href="/blog.html" class="group">
+            <div class="relative h-64 rounded-xl overflow-hidden">
+              <img 
+                src="https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg" 
+                alt="Technology" 
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent flex items-end">
+                <div class="p-6 text-white">
+                  <h3 class="text-xl font-bold mb-2">Technology</h3>
+                  <p class="text-gray-200">Latest tech trends and innovations</p>
+                </div>
+              </div>
+            </div>
+          </a>
+          
+          <!-- Design Category -->
+          <a href="/blog.html" class="group">
+            <div class="relative h-64 rounded-xl overflow-hidden">
+              <img 
+                src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg" 
+                alt="Design" 
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent flex items-end">
+                <div class="p-6 text-white">
+                  <h3 class="text-xl font-bold mb-2">Design</h3>
+                  <p class="text-gray-200">UI/UX and visual design insights</p>
+                </div>
+              </div>
+            </div>
+          </a>
+          
+          <!-- Development Category -->
+          <a href="/blog.html" class="group">
+            <div class="relative h-64 rounded-xl overflow-hidden">
+              <img 
+                src="https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg" 
+                alt="Development" 
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent flex items-end">
+                <div class="p-6 text-white">
+                  <h3 class="text-xl font-bold mb-2">Development</h3>
+                  <p class="text-gray-200">Coding tutorials and best practices</p>
+                </div>
+              </div>
+            </div>
+          </a>
+          
+          <!-- Career Category -->
+          <a href="/blog.html" class="group">
+            <div class="relative h-64 rounded-xl overflow-hidden">
+              <img 
+                src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg" 
+                alt="Career" 
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent flex items-end">
+                <div class="p-6 text-white">
+                  <h3 class="text-xl font-bold mb-2">Career</h3>
+                  <p class="text-gray-200">Professional growth and opportunities</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rest of the content remains the same -->
+    <!-- Featured Post -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-800">
+      <div class="container-custom">
+        <h2 class="text-center mb-12">Featured Post</h2>
+        
+        <div class="card lg:flex animate-fade-in">
+          <div class="lg:w-1/2">
+            <img 
+              src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+              alt="People collaborating" 
+              class="w-full h-full object-cover object-center"
+            />
+          </div>
+          <div class="lg:w-1/2 p-6 md:p-8 flex flex-col justify-center">
+            <div class="flex items-center mb-4">
+              <span class="text-sm font-medium bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200 px-3 py-1 rounded-full">Technology</span>
+              <span class="ml-4 text-sm text-gray-500 dark:text-gray-400">October 15, 2025</span>
+            </div>
+            <h3 class="text-2xl md:text-3xl mb-4">The Future of Web Development: Trends to Watch in 2025</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">
+              As we move further into 2025, web development continues to evolve at a rapid pace. From AI-powered tools to new approaches in design, let's explore what's shaping the future of the web.
+            </p>
+            <a href="/post.html" class="btn-primary self-start">Read More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Posts -->
+    <section class="py-16 bg-white dark:bg-gray-900">
+      <div class="container-custom">
+        <div class="flex justify-between items-center mb-12">
+          <h2>Recent Posts</h2>
+          <a href="/blog.html" class="btn-secondary">View All</a>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Post 1 -->
+          <article class="card animate-fade-in">
+            <img 
+              src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+              alt="Laptop with code" 
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <span class="text-sm font-medium bg-accent-100 text-accent-800 dark:bg-accent-900 dark:text-accent-200 px-3 py-1 rounded-full">Development</span>
+                <span class="ml-4 text-sm text-gray-500 dark:text-gray-400">October 10, 2025</span>
+              </div>
+              <h3 class="text-xl mb-3">Getting Started with Tailwind CSS: A Beginner's Guide</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">
+                Learn how to set up Tailwind CSS and leverage its utility-first approach to build modern interfaces quickly.
+              </p>
+              <a href="/post.html" class="text-primary-600 dark:text-primary-400 font-medium hover:text-primary-700 dark:hover:text-primary-300">Read More →</a>
+            </div>
+          </article>
+          
+          <!-- Post 2 -->
+          <article class="card animate-fade-in" style="animation-delay: 100ms;">
+            <img 
+              src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+              alt="Person using laptop" 
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <span class="text-sm font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 px-3 py-1 rounded-full">Design</span>
+                <span class="ml-4 text-sm text-gray-500 dark:text-gray-400">October 5, 2025</span>
+              </div>
+              <h3 class="text-xl mb-3">Designing for Accessibility: Best Practices</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">
+                Explore how to make your websites more accessible to all users, including those with disabilities.
+              </p>
+              <a href="/post.html" class="text-primary-600 dark:text-primary-400 font-medium hover:text-primary-700 dark:hover:text-primary-300">Read More →</a>
+            </div>
+          </article>
+          
+          <!-- Post 3 -->
+          <article class="card animate-fade-in" style="animation-delay: 200ms;">
+            <img 
+              src="https://images.pexels.com/photos/3183165/pexels-photo-3183165.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+              alt="Team meeting" 
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <div class="flex items-center mb-4">
+                <span class="text-sm font-medium bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200 px-3 py-1 rounded-full">Career</span>
+                <span class="ml-4 text-sm text-gray-500 dark:text-gray-400">September 28, 2025</span>
+              </div>
+              <h3 class="text-xl mb-3">From Junior to Senior: Navigating Your Web Dev Career</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">
+                Advice for developers looking to advance their careers and take on more senior responsibilities.
+              </p>
+              <a href="/post.html" class="text-primary-600 dark:text-primary-400 font-medium hover:text-primary-700 dark:hover:text-primary-300">Read More →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-800">
+      <div class="container-custom max-w-4xl">
+        <div class="bg-primary-50 dark:bg-gray-700 rounded-xl p-8 md:p-12 shadow-sm">
+          <div class="text-center mb-8">
+            <h2 class="text-primary-800 dark:text-primary-300">Subscribe to our newsletter</h2>
+            <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              Get the latest articles, tutorials, and updates delivered straight to your inbox. No spam, ever.
+            </p>
+          </div>
+          <form class="max-w-md mx-auto">
+            <div class="flex flex-col sm:flex-row gap-4">
+              <input 
+                type="email" 
+                placeholder="Enter your email" 
+                class="flex-grow px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                required
+              />
+              <button type="submit" class="btn-primary whitespace-nowrap">
+                Subscribe
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+{% endblock %}
+   
