@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-900 transition-colors duration-200;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-bold leading-tight;
+  }
+  h1 {
+    @apply text-4xl md:text-5xl mb-6;
+  }
+  h2 {
+    @apply text-3xl md:text-4xl mb-4;
+  }
+  h3 {
+    @apply text-2xl md:text-3xl mb-3;
+  }
+  p {
+    @apply mb-4 leading-relaxed;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center px-4 py-2 rounded-md font-medium transition-colors duration-200;
+  }
+  .btn-primary {
+    @apply btn bg-primary-500 text-white hover:bg-primary-600;
+  }
+  .btn-secondary {
+    @apply btn bg-gray-200 text-gray-800 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600;
+  }
+  .btn-accent {
+    @apply btn bg-accent-500 text-white hover:bg-accent-600;
+  }
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-shadow duration-200 hover:shadow-lg;
+  }
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}

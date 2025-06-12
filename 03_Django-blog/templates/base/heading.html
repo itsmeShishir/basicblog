@@ -1,36 +1,40 @@
 
-    <header class="sticky top-0 bg-white dark:bg-gray-900 shadow-sm z-10">
+    <header class="sticky top-0 bg-white  shadow-sm z-10">
       <nav class="container-custom py-4">
         <div class="flex justify-between items-center">
-          <a href="{% url 'home' %}" class="text-2xl font-serif font-bold text-primary-600 dark:text-primary-400">
+          <a href="{% url 'home' %}" class="text-2xl font-serif font-bold text-primary-600 ">
             MinimalBlog
           </a>
           
           <div class="hidden md:flex items-center space-x-8">
-            <a href="{% url 'home' %}" class="font-medium text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300">Home</a>
-            <a href="{% url 'blog' %}" class="font-medium text-gray-800 dark:text-gray-200 hover:text-primary-500 dark:hover:text-primary-400">Blog</a>
-            <a href="{% url 'about' %}" class="font-medium text-gray-800 dark:text-gray-200 hover:text-primary-500 dark:hover:text-primary-400">About</a>
-            <a href="{% url 'contact' %}" class="font-medium text-gray-800 dark:text-gray-200 hover:text-primary-500 dark:hover:text-primary-400">Contact</a>
-            <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <a href="{% url 'home' %}" class="font-medium text-primary-600  hover:text-primary-700 ">Home</a>
+            <a href="{% url 'blog' %}" class="font-medium text-gray-800  hover:text-primary-500 ">Blog</a>
+            <a href="{% url 'about' %}" class="font-medium text-gray-800  hover:text-primary-500 ">About</a>
+            <a href="{% url 'contact' %}" class="font-medium text-gray-800  hover:text-primary-500 ">Contact</a>
+            {% if user.is_authenticated %}
+              <a href="{% url 'dashboard' %}" class="font-medium text-gray-800  hover:text-primary-500 ">{{user.username}}</a>
+              <a href="{% url 'logouts' %}" class="font-medium text-gray-800  hover:text-primary-500 ">Logout</a>
+            {% else %}
+            <a href="{% url 'logins' %}" class="font-medium text-gray-800  hover:text-primary-500 ">Login</a>
+            {% endif %}
+            <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100 ">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden " fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
               </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-              </svg>
+             
             </button>
           </div>
           
           <div class="md:hidden flex items-center space-x-4">
-            <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100 ">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden " fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
               </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
               </svg>
             </button>
-            <button id="mobile-menu-button" aria-expanded="false" class="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">
+            <button id="mobile-menu-button" aria-expanded="false" class="p-2 rounded-md hover:bg-gray-100 ">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
@@ -40,10 +44,10 @@
         
         <!-- Mobile menu -->
         <div id="mobile-menu" class="md:hidden hidden mt-4 pb-2 animate-fade-in">
-          <a href="/" class="block py-2 font-medium text-gray-800 dark:text-gray-200">Home</a>
-          <a href="/blog.html" class="block py-2 font-medium text-gray-800 dark:text-gray-200">Blog</a>
-          <a href="/about.html" class="block py-2 font-medium text-gray-800 dark:text-gray-200">About</a>
-          <a href="/contact.html" class="block py-2 font-medium text-gray-800 dark:text-gray-200">Contact</a>
+          <a href="/" class="block py-2 font-medium text-gray-800 ">Home</a>
+          <a href="/blog.html" class="block py-2 font-medium text-gray-800 ">Blog</a>
+          <a href="/about.html" class="block py-2 font-medium text-gray-800 ">About</a>
+          <a href="/contact.html" class="block py-2 font-medium text-gray-800 ">Contact</a>
         </div>
       </nav>
     </header>

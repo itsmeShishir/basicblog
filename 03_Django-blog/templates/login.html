@@ -1,0 +1,32 @@
+{% extends 'base/base.html' %}
+{% block title %}Login Page | MinimalBlog{% endblock title %}
+{% block content %}
+
+    <section class="py-16 bg-white   ">
+        <div class="2xl:container flex flex-col items-center justify-center h-[80vh]  mx-auto">
+            <div >
+                    <h1 class="text-center text-3xl font-semibold text-gray-800">Login Now</h1>
+
+                <form action="{% url 'logins' %}" method="post" class="mt-8 space-y-6">
+                    {% csrf_token %}
+                  
+                    <div class="mb-4">
+                        <label for="email">Email</label>
+                        <input type="text" name="email" placeholder="JohnDoe@gmail.com" class="w-full px-4 py-2 rounded-md border border-gray-300  bg-white  text-gray-800  focus:outline-none focus:ring-2 focus:ring-primary-500">
+                    </div>
+                    <div class="mb-4">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" placeholder="*****" class="w-full px-4 py-2 rounded-md border border-gray-300  bg-white  text-gray-800  focus:outline-none focus:ring-2 focus:ring-primary-500">
+                    </div>
+                    <div class="mb-4">
+                        <button type="submit" class="py-4 px-6 border-2 border-red-500 rounded-md text-green-500 bg-green-200 hover:bg-red-500 hover:text-green">Login Now</button>
+                    </div>
+                     <a href="{% url 'registers' %}" class="text-center text-red-500">Doesn't have an account? <span class="underline text-green-500">Register</span></a>
+                </form>
+            </div>
+        </div>
+    </section>
+        
+
+    
+{% endblock content %}

@@ -1,0 +1,51 @@
+{% extends 'base/base.html' %}
+{% block title %}Register Page | MinimalBlog{% endblock title %}
+{% block content %}
+
+    <section class="py-16 bg-white   ">
+        <div class="2xl:container flex flex-col items-center justify-center h-[80vh]  mx-auto">
+            <div >
+                    <h1 class="text-center text-3xl font-semibold text-gray-800">Register Now</h1>
+
+                <form action="{% url 'registers' %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="mb-4">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" placeholder="john" class="w-full px-4 py-2 rounded-md border border-gray-300  bg-white  text-gray-800  focus:outline-none focus:ring-2 focus:ring-primary-500">
+                   </div>
+                    <div class="mb-4">
+                        <label for="full_name">Full Name</label>
+                        <input type="text" name="full_name" placeholder="John Doe" class="w-full px-4 py-2 rounded-md border border-gray-300  bg-white  text-gray-800  focus:outline-none focus:ring-2 focus:ring-primary-500">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email">Email</label>
+                        <input type="text" name="email" placeholder="JohnDoe@gmail.com" class="w-full px-4 py-2 rounded-md border border-gray-300  bg-white  text-gray-800  focus:outline-none focus:ring-2 focus:ring-primary-500">
+                    </div>
+                    <div class="mb-4">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" placeholder="*****" class="w-full px-4 py-2 rounded-md border border-gray-300  bg-white  text-gray-800  focus:outline-none focus:ring-2 focus:ring-primary-500">
+                    </div>
+                    <div class="mb-4">
+                        <label for="confirm_password">Confirm Password</label>
+                        <input type="password" name="confirm_password" placeholder="*******" class="w-full px-4 py-2 rounded-md border border-gray-300  bg-white  text-gray-800  focus:outline-none focus:ring-2 focus:ring-primary-500">
+                    </div>
+                    <div class="mb-4">
+                        <label for="phone_number">Phone Number</label>
+                        <input type="number" name="phone_number" placeholder="(+977 )" class="w-full px-4 py-2 rounded-md border border-gray-300  bg-white  text-gray-800  focus:outline-none focus:ring-2 focus:ring-primary-500">
+                    </div>
+                    <div class="mb-4">
+                        <label for="profile_image">Profile Image</label>
+                        <input type="file" name="profile_image"  class="w-full px-4 py-2 rounded-md border border-gray-300  bg-white  text-gray-800  focus:outline-none focus:ring-2 focus:ring-primary-500">
+                    </div>
+                    <div class="mb-4">
+                        <button type="submit" class="py-4 px-6 border-2 border-red-500 rounded-md text-green-500 bg-green-200 hover:bg-red-500 hover:text-green">Register Now</button>
+                    </div>
+                    <a href="{% url 'logins' %}" class="text-center text-red-500">All ready have an account? <span class="underline text-green-500">Login</span></a>
+                </form>
+            </div>
+        </div>
+    </section>
+        
+
+    
+{% endblock content %}
