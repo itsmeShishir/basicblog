@@ -3,45 +3,39 @@
 {% block content %}
 
     <!-- Article Header -->
-    <section class="bg-gradient-to-br from-primary-50 to-white  py-12 md:py-24">
+    <section class="bg-gradient-to-br from-primary-50 to-white flex flex-col items-center justify-center py-12 md:py-24">
       <div class="container-custom max-w-4xl text-center">
-        <div class="flex items-center justify-center mb-6 space-x-4">{{ post.category}}</span>
-          <span class="text-sm text-gray-500 ">{{post.created_at}}</span>
+        <div class="flex items-center justify-center mb-6 space-x-4">{{blog.category}}</span>
+          <span class="text-sm text-gray-500 ">{{blog.created_at}}</span>
         </div>
         <h1 class="mb-6 animate-fade-in animate-delay-100 text-4xl md:text-5xl font-serif font-bold">{{post.title}}</h1>
         <div class="flex items-center justify-center">
           <img 
-            src="{{ post.image.url }}" 
+            src="{{ blog.image.url }}" 
             alt="Featured image" 
             class="w-full h-64 md:h-96 object-cover rounded-xl shadow-lg animate-slide-up"
           />
         </div>
       </div>
     </section>
-
+    <section class="flex flex-col items-center justify-center  ">
+      <h2 class="text-4xl font-serif font-bold animate-fade-in">{{blog.title}}</h2>
+    </section>
     <!-- Article Content -->
-    <section class="py-16 bg-white ">
+    <section class="py-16 bg-white flex flex-col items-center justify-center">
       <div class="container-custom max-w-3xl">
         <div class="prose prose-lg  mx-auto">
           <p class="lead text-xl text-gray-600 ">
-            {{post.content}}
+            {{blog.content | safe}} 
           </p>
-          
         </div>
-        
         <!-- Author Info -->
         <div class="mt-16 flex items-center border-t border-gray-200  pt-8">
-          <img 
-            src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-            alt="Author" 
-            class="w-16 h-16 rounded-full object-cover mr-4"
-          />
           <div>
             <h3 class="text-lg font-semibold">Michael Thompson</h3>
             <p class="text-gray-600 ">Senior Web Developer & Technology Writer</p>
           </div>
         </div>
-        
         <!-- Share Links -->
         <div class="mt-8 flex items-center">
           <span class="text-gray-700  mr-4">Share this article:</span>
@@ -72,68 +66,29 @@
     <!-- Related Posts -->
     <section class="py-16 bg-gray-50 ">
       <div class="container-custom">
-        <h2 class="text-center mb-12">You might also enjoy</h2>
+        <h2 class="text-center mb-12 text-3xl md:text-4xl font-serif font-bold">You might also enjoy</h2>
         
         <div class="grid md:grid-cols-3 gap-8">
           <!-- Related Post 1 -->
-          <article class="card animate-fade-in">
+          {% for post in related_Blog %}
+            <article class="card animate-fade-in">
             <img 
-              src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+              src="{{post.image.url}}" 
               alt="Laptop with code" 
               class="w-full h-48 object-cover"
             />
             <div class="p-6">
               <div class="flex items-center mb-4">
                 <span class="text-sm font-medium bg-accent-100 text-accent-800  px-3 py-1 rounded-full">Development</span>
-                <span class="ml-4 text-sm text-gray-500 ">October 10, 2025</span>
+                <span class="ml-4 text-sm text-gray-500 ">{{post.created_at}}</span>
               </div>
-              <h3 class="text-xl mb-3">Getting Started with Tailwind CSS: A Beginner's Guide</h3>
+              <h3 class="text-xl mb-3">{{post.title}}</h3>
               <p class="text-gray-600  mb-4">
-                Learn how to set up Tailwind CSS and leverage its utility-first approach to build modern interfaces quickly.
-              </p>
-              <a href="/post.html" class="text-primary-600  font-medium hover:text-primary-700 ">Read More →</a>
+                {{post.content | truncatechars:200 | striptags }}
+              <a href="{% url 'post' post.slug %}" class="text-primary-600  font-medium hover:text-primary-700 ">Read More →</a>
             </div>
           </article>
-          
-          <!-- Related Post 2 -->
-          <article class="card animate-fade-in" style="animation-delay: 100ms;">
-            <img 
-              src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-              alt="Person using laptop" 
-              class="w-full h-48 object-cover"
-            />
-            <div class="p-6">
-              <div class="flex items-center mb-4">
-                <span class="text-sm font-medium bg-green-100 text-green-800   px-3 py-1 rounded-full">Design</span>
-                <span class="ml-4 text-sm text-gray-500 ">October 5, 2025</span>
-              </div>
-              <h3 class="text-xl mb-3">Designing for Accessibility: Best Practices</h3>
-              <p class="text-gray-600  mb-4">
-                Explore how to make your websites more accessible to all users, including those with disabilities.
-              </p>
-              <a href="/post.html" class="text-primary-600  font-medium hover:text-primary-700 ">Read More →</a>
-            </div>
-          </article>
-          
-          <!-- Related Post 3 -->
-          <article class="card animate-fade-in" style="animation-delay: 200ms;">
-            <img 
-              src="https://images.pexels.com/photos/3183165/pexels-photo-3183165.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-              alt="Team meeting" 
-              class="w-full h-48 object-cover"
-            />
-            <div class="p-6">
-              <div class="flex items-center mb-4">
-                <span class="text-sm font-medium bg-purple-100 text-purple-800   px-3 py-1 rounded-full">Career</span>
-                <span class="ml-4 text-sm text-gray-500 ">September 28, 2025</span>
-              </div>
-              <h3 class="text-xl mb-3">From Junior to Senior: Navigating Your Web Dev Career</h3>
-              <p class="text-gray-600  mb-4">
-                Advice for developers looking to advance their careers and take on more senior responsibilities.
-              </p>
-              <a href="/post.html" class="text-primary-600  font-medium hover:text-primary-700 ">Read More →</a>
-            </div>
-          </article>
+          {% endfor %}
         </div>
       </div>
     </section>
@@ -141,102 +96,35 @@
     <!-- Comments Section -->
     <section class="py-16 bg-white ">
       <div class="container-custom max-w-3xl">
-        <h2 class="mb-8">Comments (3)</h2>
+        <h2 class="mb-8">Comments {{ comments.count }}</h2>
         
         <!-- Comment 1 -->
+         {% for commentss in commets %}
         <div class="mb-8 pb-8 border-b border-gray-200 ">
           <div class="flex items-start">
-            <img 
-              src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-              alt="Commenter" 
-              class="w-12 h-12 rounded-full object-cover mr-4"
-            />
+            
             <div>
               <div class="flex items-center mb-1">
-                <h4 class="font-semibold">Jennifer Lee</h4>
-                <span class="text-sm text-gray-500  ml-4">2 days ago</span>
+                <h4 class="font-semibold">{{commentss.name}}</h4>
+                <span class="text-sm text-gray-500  ml-4">{{commentss.created_at}}</span>
               </div>
               <p class="text-gray-700  mb-4">
-                Great article! I've been experimenting with WebAssembly recently and the performance gains are impressive. Looking forward to seeing how this technology evolves.
+                {{commentss.comment}}
               </p>
-              <button class="text-sm text-primary-600  font-medium hover:text-primary-700 ">Reply</button>
             </div>
           </div>
         </div>
+
+        {% endfor %}
         
-        <!-- Comment 2 -->
-        <div class="mb-8 pb-8 border-b border-gray-200 ">
-          <div class="flex items-start">
-            <img 
-              src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-              alt="Commenter" 
-              class="w-12 h-12 rounded-full object-cover mr-4"
-            />
-            <div>
-              <div class="flex items-center mb-1">
-                <h4 class="font-semibold">David Rodriguez</h4>
-                <span class="text-sm text-gray-500  ml-4">3 days ago</span>
-              </div>
-              <p class="text-gray-700  mb-4">
-                The section on sustainable web design resonated with me. I've been working to reduce the carbon footprint of my clients' websites, and it's encouraging to see this becoming a mainstream concern.
-              </p>
-              <button class="text-sm text-primary-600  font-medium hover:text-primary-700 ">Reply</button>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Comment 3 -->
-        <div class="mb-8">
-          <div class="flex items-start">
-            <img 
-              src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-              alt="Commenter" 
-              class="w-12 h-12 rounded-full object-cover mr-4"
-            />
-            <div>
-              <div class="flex items-center mb-1">
-                <h4 class="font-semibold">Alex Johnson</h4>
-                <span class="text-sm text-gray-500  ml-4">4 days ago</span>
-              </div>
-              <p class="text-gray-700  mb-4">
-                I'm skeptical about AI-assisted development replacing human creativity, but I can see how it's valuable for repetitive tasks. Do you think there's a risk of developers losing fundamental skills by relying too heavily on these tools?
-              </p>
-              <button class="text-sm text-primary-600  font-medium hover:text-primary-700 ">Reply</button>
-            </div>
-          </div>
-        </div>
+       
         
         <!-- Add Comment Form -->
         <div class="mt-12">
           <h3 class="text-xl font-semibold mb-4">Leave a comment</h3>
-          <form>
-            <div class="mb-4">
-              <label for="name" class="block text-sm font-medium text-gray-700  mb-1">Name</label>
-              <input
-                type="text"
-                id="name"
-                class="w-full px-4 py-2 rounded-md border border-gray-300  bg-white  text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-500"
-                required
-              />
-            </div>
-            <div class="mb-4">
-              <label for="email" class="block text-sm font-medium text-gray-700  mb-1">Email</label>
-              <input
-                type="email"
-                id="email"
-                class="w-full px-4 py-2 rounded-md border border-gray-300  bg-white  text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-500"
-                required
-              />
-            </div>
-            <div class="mb-4">
-              <label for="comment" class="block text-sm font-medium text-gray-700  mb-1">Comment</label>
-              <textarea
-                id="comment"
-                rows="4"
-                class="w-full px-4 py-2 rounded-md border border-gray-300  bg-white  text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-500"
-                required
-              ></textarea>
-            </div>
+          <form action="{% url 'post' blog.slug %}" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
             <button type="submit" class="btn-primary">Submit Comment</button>
           </form>
         </div>

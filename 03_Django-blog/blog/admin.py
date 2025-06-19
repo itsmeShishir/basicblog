@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Blog, Comment
+from .models import Blog, Comment, Contact
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from django import forms
 
@@ -15,6 +15,7 @@ class BlogAdmin(admin.ModelAdmin):
 
 admin.site.register(Blog, BlogAdmin)
 admin.site.register(Comment)
+admin.site.register(Contact)
 
 # python manage.py makemigrations blog
 # python manage.py migrate

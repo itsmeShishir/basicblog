@@ -44,7 +44,7 @@
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <!-- Technology Category -->
          {% for cateogry in fourCategory %}
-          <a href="/blog.html" class="group">
+          <a href="{% url 'getSingleCategory' cateogry.id %}" class="group">
             <div class="relative h-64 rounded-xl overflow-hidden">
               <img 
                 src="{{ cateogry.image.url }}" 

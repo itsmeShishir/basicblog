@@ -3,6 +3,7 @@ from .models import User
 from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from blog.models import Blog, Contact
 
 # Create your views here.
 
@@ -73,4 +74,11 @@ def update_profile(request):
 
 @login_required(login_url="login")
 def dashboard(request):
-    return render(request, "dashboard.html")    
+    contact = Contact.objects.all()
+    blog = Blog.objects.all()
+    print(contact)
+    context = {
+        "contact": contact,
+        "blog": blog,
+    }
+    return render(request, "dashboard.html", {"context": context})    
