@@ -1,0 +1,102 @@
+{% extends 'base/base.html' %}
+{% block title %}Contact Page | MinimalBlog{% endblock title %}
+{% block content %}
+    <div class="w-[60vw] mx-auto md:w-[80vw] flex flex-col items-center">
+      <!-- Contact Header -->
+    <section class="bg-gradient-to-br from-primary-50 to-white  py-16 md:py-24">
+      <div class="container-custom max-w-4xl text-center">
+        <h1 class="animate-fade-in">Get In Touch</h1>
+        <p class="text-lg md:text-xl text-gray-600  max-w-3xl mx-auto animate-slide-up">
+          Have questions, feedback, or want to collaborate? We'd love to hear from you.
+        </p>
+      </div>
+    </section>
+    <section>
+      <p>{{message}}</p>
+    </section>
+    <!-- Contact Information & Form -->
+    <section class="py-16 bg-white ">
+      <div class="container-custom max-w-6xl">
+        <div class="grid md:grid-cols-2 gap-12">
+          <!-- Contact Info -->
+          <div>
+            <h2 class="text-3xl font-serif font-bold mb-8">Send us a message</h2>
+            <form class="space-y-6" action="{% url 'UpdateContact' contact.id %}" method="post">
+              {% csrf_token %}
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label for="name" class="block text-sm font-medium text-gray-700  mb-1">Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value="{{contact.name}}"
+                    class="w-full px-4 py-2 rounded-md border border-gray-300 bg-white  text-gray-800  focus:outline-none focus:ring-2 focus:ring-primary-500"
+                    required
+                  />
+                </div>
+                <div>
+                  <label for="email" class="block text-sm font-medium text-gray-700  mb-1">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    value="{{contact.email}}"
+                    name="email"
+                    class="w-full px-4 py-2 rounded-md border border-gray-300 bg-white  text-gray-800  focus:outline-none focus:ring-2 focus:ring-primary-500"
+                    required
+                  />
+                </div>
+              </div>
+              
+              <div>
+                <label for="subject" class="block text-sm font-medium text-gray-700  mb-1">Subject</label>
+                <input
+                  type="text"
+                  id="subject"
+                  value="{{contact.subject}}"
+                  name="subject"
+                  class="w-full px-4 py-2 rounded-md border border-gray-300 bg-white  text-gray-800  focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  required
+                />
+              </div>
+              
+              <div>
+                <label for="message" class="block text-sm font-medium text-gray-700  mb-1">Message</label>
+                <textarea
+                  id="message"
+                  rows="6"
+                  value="{{contact.message}}"
+                  name="message"
+                  class="w-full px-4 py-2 rounded-md border border-gray-300 bg-white  text-gray-800  focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  required
+                ></textarea>
+              </div>
+              
+              <div class="flex items-start">
+                <input
+                  type="checkbox"
+                  id="privacy"
+                  class="mt-1 h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
+                />
+                <label for="privacy" class="ml-2 block text-sm text-gray-700 ">
+                  I agree to the <a href="#" class="text-primary-600  hover:underline">privacy policy</a> and consent to being contacted regarding my inquiry.
+                </label>
+              </div>
+              
+              <div>
+                <button type="submit" class="btn-primary px-6 py-3">
+                  Send Message
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    
+    </div>
+
+{% endblock content %}

@@ -21,6 +21,13 @@
 
 </section>
 
+<p class="text-green-500  text-center"> 
+    {% if messages %}
+    {% for message in messages %}
+    {{message}}
+    {% endfor %}
+    {% endif %}
+</p>
 
 <div class="relative w-[80vw] mx-auto overflow-x-auto">
     <h1>List Of All the Contact</h1>
@@ -28,23 +35,32 @@
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" class="px-6 py-3">
-                    Product name
+                   id
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Color
+                    Full Name
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Category
+                    Email
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Price
+                    Subject
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Description
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Actions
                 </th>
             </tr>
         </thead>
         <tbody>
+                 {% for contacts in contact %}
           
              <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
-                 {% for contacts in contact %}
+                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {{contacts.id}}
+                </th>
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                     {{contacts.name}}
                 </th>
@@ -55,15 +71,76 @@
                     {{contacts.subject}}
                 </td>
                 <td class="px-6 py-4">
-                    <a href="" class="btn-danger">Delete</a>
-                    <a href="" class="btn-danger">Update Contact</a>
+                    {{contacts.message | truncatechars:20}}
                 </td>
-           {% endfor %}
+                <td class="px-6 py-4 text-gray-900 dark:text-white flex gap-4 items-center">
+                    <form method="post" action="{% url 'delete_contact' contacts.id %}" >
+                        {% csrf_token %}
+                        <button type="submit"> Delete </button></form>
+                    <a href="{% url 'UpdateContact' contacts.id %}" class="btn-danger">Update</a>
+                </td>
 
             </tr>
+           {% endfor %}
+
         </tbody>
     </table>
 </div>
 
+<div class="relative w-[80vw] mx-auto overflow-x-auto">
+    <h1>List Of All the Blogs</h1>
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                   id
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    title
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Content
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Image
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Category
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Actions
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+           {% for contacts in blog %}
+             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
+                
+                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {{contacts.id}}
+                </th>
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {{contacts.title}}
+                </th>
+                <td class="px-6 py-4">
+                    {{contacts.content | truncatechars:30}}
+                </td>
+                <td class="px-6 py-4">
+                    <img src="{{contacts.image.url}}" alt="{{contacts.title}}">
+                </td>
+                <td class="px-6 py-4">
+                    {{contacts.category}}
+                </td>
+                <td class="px-6 py-4 text-gray-900 dark:text-white flex gap-4 items-center">
+                    <a href="" class="btn-danger">Delete</a>
+                    <a href="" class="btn-danger">Update</a>
+                </td>
+           
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 
 {% endblock content %}

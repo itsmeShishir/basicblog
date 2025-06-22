@@ -1,9 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import User
 from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from blog.models import Blog, Contact
+from categorys.models import Category
 
 # Create your views here.
 
@@ -76,9 +77,32 @@ def update_profile(request):
 def dashboard(request):
     contact = Contact.objects.all()
     blog = Blog.objects.all()
+    category = Category.objects.all()
     print(contact)
     context = {
         "contact": contact,
         "blog": blog,
+        "category": category
     }
-    return render(request, "dashboard.html", {"context": context})    
+    return render(request, "dashboard.html", context)    
+
+@login_required(login_url="login")
+def delete_contact(request, id):
+    contact = get_object_or_404(Contact, id=id)
+    contact.delete()
+    messages.success(request, "contact deleted successfully")
+    return redirect("dashboard")
+
+
+@login_required(login_url="login")
+def update_contact(request, id):    
+    contact = get_object_or_404(Contact, id=id)
+    if request.method == "POST":
+        contact.name = request.POST["name"]
+        contact.email = request.POST["email"]
+        contact.subject = request.POST["subject"]
+        contact.message = request.POST["message"]
+        contact.save()
+        messages.success(request, "contact updated successfully")
+        return redirect("dashboard")
+    return render(request, "updateContact.html", {"contact": contact})

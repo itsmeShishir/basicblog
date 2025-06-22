@@ -3,6 +3,8 @@ from .models import Blog, Comment, Contact
 from categorys.models import Category
 from .forms import CommentForm
 from django.contrib import messages
+from .serializations import BlogSerialization
+from rest_framework import generics
 
 # def home(request):
 #     return HttpResponse("Hello World")
@@ -77,3 +79,13 @@ def Contacts(request):
         return redirect("home")
     return render(request, "contact.html")
 
+
+
+def blog_api(request):
+    blog = Blog.objects.all()
+    serializer = BlogSerialization(blog, many=True)
+    return HttpResponse(serializer.data)
+
+class BlogList(generics.ListAPIView):
+    queryset = Blog.objects.all()
+    serializer_class = BlogSerialization
