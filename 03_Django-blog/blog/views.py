@@ -3,7 +3,7 @@ from .models import Blog, Comment, Contact
 from categorys.models import Category
 from .forms import CommentForm
 from django.contrib import messages
-from .serializations import BlogSerialization
+from .serializations import BlogSerialization, BlogCreateRetriveSerialization
 from rest_framework import generics
 
 # def home(request):
@@ -89,3 +89,23 @@ def blog_api(request):
 class BlogList(generics.ListAPIView):
     queryset = Blog.objects.all()
     serializer_class = BlogSerialization
+
+
+class BlogCreate(generics.CreateAPIView):
+    queryset = Blog.objects.all()
+    serializer_class = BlogCreateRetriveSerialization
+
+class BlogRetrive(generics.RetrieveAPIView):
+    queryset = Blog.objects.all()
+    lookup = "pk"
+    serializer_class = BlogSerialization
+
+class BlogUpdate(generics.UpdateAPIView):
+    queryset = Blog.objects.all()
+    lookup = "pk"
+    serializer_class = BlogCreateRetriveSerialization
+
+class BlogDelete(generics.DestroyAPIView):
+    queryset = Blog.objects.all()
+    lookup = "pk"
+    serializer_class = BlogCreateRetriveSerialization
